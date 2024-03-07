@@ -1,15 +1,21 @@
 package data.controller;
 
 import data.model.InternetCat;
+import java.util.ArrayList;
 import data.view.DataFrame;
 import javax.swing.JOptionPane;
 
 public class Controller
 {
+	private String catURLBase;
+	private ArrayList<InternetCat> catList;
+	private DataFrame window;
 	
 	public Controller()
 	{
-		
+		this.catURLBase = "";
+		this.catList = new ArrayList<InternetCat>();
+		this.window = new DataFrame(this);
 	}
 	
 	public void start()

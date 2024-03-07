@@ -24,6 +24,6 @@ public class DataFrame extends JFrame
 		setTitle("Meow lmao");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-		setVisible(false);
+		setVisible(true);
 	}
 }
