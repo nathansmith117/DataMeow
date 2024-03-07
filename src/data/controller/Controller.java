@@ -4,6 +4,8 @@ import data.model.InternetCat;
 import java.util.ArrayList;
 import data.view.DataFrame;
 import javax.swing.JOptionPane;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Controller
 {
@@ -36,5 +38,40 @@ public class Controller
 	public void handleError(Exception error)
 	{
 		JOptionPane.showMessageDialog(null, error.getMessage(), "Ooooops lmao", JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public String addCat()
+	{
+		String appended = "";
+		
+		String catDetails = "";
+		
+		InternetCat currentCat = (InternetCat)IOController.readSingleJSON(this, catURLBase, appended);
+		catList.add(currentCat);
+		
+		catDetails = currentCat.toString();
+		
+		return catDetails;
+	}
+	
+	public URL getCatImageURL(String details)
+	{
+		String path = "";
+		
+		int index = details.indexOf("_id=") + 4;
+		path = details.substring(index, details.length() - 1);
+		
+		URL catImageURL = null;
+		
+		try
+		{
+			catImageURL = new URL(catURLBase + path + ".jpeg");
+		}
+		catch (MalformedURLException error)
+		{
+			handleError(error);
+		}
+		
+		return catImageURL;
 	}
 }
