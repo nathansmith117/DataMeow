@@ -13,7 +13,7 @@ public class Controller
 	
 	public Controller()
 	{
-		this.catURLBase = "";
+		this.catURLBase = "https://cataas.com/cat/";
 		this.catList = new ArrayList<InternetCat>();
 		this.window = new DataFrame(this);
 	}
@@ -28,6 +28,9 @@ public class Controller
 		System.out.println("Here is the createdAt value " + demo.createdAt());
 		
 		System.out.println("For constrast, a non prebuilt toString() -> " + this);
+		
+		InternetCat catJSON = (InternetCat)IOController.readSingleJSON(this, catURLBase, "cute?json=true");
+		System.out.print(catJSON);
 	}
 	
 	public void handleError(Exception error)
