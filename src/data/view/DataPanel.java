@@ -1,5 +1,17 @@
 package data.view;
 
+import javax.swing.JPanel;
+import javax.swing.SpringLayout;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Image;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+
+import javax.imageio.ImageIO;
+
 import data.controller.Controller;
 import javax.swing.JPanel;
 
