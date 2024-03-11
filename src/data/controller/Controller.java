@@ -42,7 +42,7 @@ public class Controller
 	
 	public String addCat()
 	{
-		String appended = "";
+		String appended = "cute?json=true";
 		
 		String catDetails = "";
 		

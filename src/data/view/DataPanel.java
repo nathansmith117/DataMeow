@@ -57,7 +57,7 @@ public class DataPanel extends JPanel
 		
 		dataPane = new JScrollPane();
 		dataArea = new JTextArea();
-		displayLabel = new JLabel("The most import internet content!");
+		displayLabel = new JLabel("The most importent internet content!");
 		inputField = new JTextField("Input");
 		catButton = new JButton("cat");
 		linearButton = new JButton("linear");
@@ -109,7 +109,7 @@ public class DataPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		
+		catButton.addActionListener(click -> getCat());
 	}
 	
 	private void setupLayout()
