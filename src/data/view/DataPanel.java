@@ -13,6 +13,7 @@ import javax.swing.JScrollPane;
 
 import javax.imageio.ImageIO;
 
+import java.awt.Color;
 import data.controller.Controller;
 import javax.swing.JPanel;
 
@@ -73,7 +74,35 @@ public class DataPanel extends JPanel
 	
 	private void setupPanel()
 	{
+		setBackground(Color.MAGENTA);
+		setLayout(layout);
 		
+		this.add(displayLabel);
+		this.add(dataPane);
+		this.add(menuPanel);
+		
+		menuPanel.add(webPanel);
+		menuPanel.add(dataPanel);
+		
+		dataPane.setViewportView(dataArea);
+		dataArea.setEnabled(false);
+		dataArea.setLineWrap(true);
+		dataArea.setWrapStyleWord(true);
+		
+		displayLabel.setVerticalTextPosition(JLabel.BOTTOM);
+		displayLabel.setHorizontalTextPosition(JLabel.CENTER);
+		
+		webPanel.add(inputField);
+		webPanel.add(catButton);
+		
+		dataPanel.add(linearButton);
+		dataPanel.add(compareButton);
+		dataPanel.add(iteratorButton);
+		dataPanel.add(setButton);
+		dataPanel.add(hashMapButton);
+		dataPanel.add(treeButton);
+		dataPanel.add(twoDButton);
+		dataPanel.add(textButton);
 	}
 	
 	private void setupListeners()
@@ -83,6 +112,19 @@ public class DataPanel extends JPanel
 	
 	private void setupLayout()
 	{
+		layout.putConstraint(SpringLayout.NORTH, displayLabel, 20, SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.WEST, displayLabel, 20, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.EAST, displayLabel, 700, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.SOUTH, displayLabel, 500, SpringLayout.NORTH, this);
 		
+		layout.putConstraint(SpringLayout.NORTH, dataPane, 20, SpringLayout.SOUTH, displayLabel);
+		layout.putConstraint(SpringLayout.WEST, dataPane, 0, SpringLayout.WEST, displayLabel);
+		layout.putConstraint(SpringLayout.EAST, dataPane, 0, SpringLayout.EAST, displayLabel);
+		layout.putConstraint(SpringLayout.SOUTH, dataPane, -20, SpringLayout.SOUTH, this);
+		
+		layout.putConstraint(SpringLayout.NORTH, menuPanel, 0, SpringLayout.NORTH, displayLabel);
+		layout.putConstraint(SpringLayout.WEST, menuPanel, 50, SpringLayout.EAST, displayLabel);
+		layout.putConstraint(SpringLayout.EAST, menuPanel, -20, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.SOUTH, menuPanel, 0, SpringLayout.SOUTH, dataPane);
 	}
 }
