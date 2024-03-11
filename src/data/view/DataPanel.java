@@ -15,7 +15,9 @@ import javax.imageio.ImageIO;
 
 import java.awt.Color;
 import data.controller.Controller;
-import javax.swing.JPanel;
+import java.io.IOException;
+import java.awt.image.BufferedImage;
+import java.awt.Graphics2D;
 
 public class DataPanel extends JPanel
 {
@@ -126,5 +128,41 @@ public class DataPanel extends JPanel
 		layout.putConstraint(SpringLayout.WEST, menuPanel, 50, SpringLayout.EAST, displayLabel);
 		layout.putConstraint(SpringLayout.EAST, menuPanel, -20, SpringLayout.EAST, this);
 		layout.putConstraint(SpringLayout.SOUTH, menuPanel, 0, SpringLayout.SOUTH, dataPane);
+	}
+	
+	private void loadCatImage(String details)
+	{
+		ImageIcon catPicture = null;
+		
+		try
+		{
+			BufferedImage image = ImageIO.read(app.getCatImageURL(details));
+			
+			if (image.getHeight() > 500 || image.getWidth() > 500)
+			{
+				Image temp = image.getScaledInstance(500, -1, Image.SCALE_SMOOTH);
+				BufferedImage resized = new BufferedImage(500, 500, BufferedImage.TYPE_INT_RGB);
+				Graphics2D imageGraphics = resized.createGraphics();
+				imageGraphics.drawImage(temp, 0, 0, null);
+				imageGraphics.dispose();
+				
+				image = resized;
+			}
+			
+			catPicture = new ImageIcon(image);
+		}
+		catch (IOException error)
+		{
+			app.handleError(error);
+		}
+		
+		displayLabel.setIcon(catPicture);
+	}
+	
+	private void getCat()
+	{
+		String results = app.addCat();
+		dataArea.setText(results);
+		loadCatImage(results);
 	}
 }
