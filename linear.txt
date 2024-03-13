@@ -1,1 +1,26 @@
-hi
+1:
+A ArrayList can be used like this
+ArrayList<Integer> values = new ArrayList<Integer>();
+values.add(1);
+values.add(2);
+values.add(164);
+values.add(3);
+
+int number = values.get(2);
+
+2:
+
+q1
+What is a Queue?
+A queue is like a stack but you add to the front and remove from the back like a
+waiting list.
+
+q2
+When should you use a Stack?
+Stacks are often used to return to the previous method when calling a method
+inside of a method though this is handled behind the scenes in most
+programming languages.
+
+q3
+What is a real world version of a Queue?
+A fork and spoon dispenser like the ones at Costco
