@@ -7,6 +7,12 @@ import javax.swing.JOptionPane;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+
 public class Controller
 {
 	private String catURLBase;
@@ -22,17 +28,8 @@ public class Controller
 	
 	public void start()
 	{
-		String[] tags = {"cute", "cuddly"};
-		InternetCat demo = new InternetCat(tags, "image/jpeg", 123, "", "", "garbage");
-		
-		System.out.println(demo);
-		
-		System.out.println("Here is the createdAt value " + demo.createdAt());
-		
-		System.out.println("For constrast, a non prebuilt toString() -> " + this);
-		
-		InternetCat catJSON = (InternetCat)IOController.readSingleJSON(this, catURLBase, "cute?json=true");
-		System.out.print(catJSON);
+		setItUp();
+		hashItOut();
 	}
 	
 	public void handleError(Exception error)
@@ -80,5 +77,15 @@ public class Controller
 		String results = IOController.readTextFromFile(this, path);
 		
 		return results;
+	}
+	
+	private void setItUp()
+	{
+		
+	}
+	
+	private void hashItOut()
+	{
+		
 	}
 }
