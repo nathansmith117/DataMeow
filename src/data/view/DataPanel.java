@@ -111,6 +111,12 @@ public class DataPanel extends JPanel
 	{
 		catButton.addActionListener(click -> getCat());
 		linearButton.addActionListener(click -> loadLinear());
+		hashMapButton.addActionListener(click -> loadHash());
+		setButton.addActionListener(click -> loadSet());
+		iteratorButton.addActionListener(click -> loadIterator());
+		treeButton.addActionListener(click -> loadTree());
+		compareButton.addActionListener(click -> loadCompare());
+		twoDButton.addActionListener(click -> loadTwoDArray());
 	}
 	
 	private void setupLayout()
@@ -170,6 +176,48 @@ public class DataPanel extends JPanel
 	private void loadLinear()
 	{
 		String contents = app.load("linear.txt");
+		dataArea.setText(contents);
+		dataArea.setBackground(Color.GREEN);
+	}
+	
+	private void loadHash()
+	{
+		String contents = app.load("hash.txt");
+		dataArea.setText(contents);
+		dataArea.setBackground(Color.GREEN);
+	}
+	
+	private void loadSet()
+	{
+		String contents = app.load("set.txt");
+		dataArea.setText(contents);
+		dataArea.setBackground(Color.GREEN);
+	}
+	
+	private void loadIterator()
+	{
+		String contents = app.load("iterator.txt");
+		dataArea.setText(contents);
+		dataArea.setBackground(Color.GREEN);
+	}
+	
+	private void loadTree()
+	{
+		String contents = app.load("tree.txt");
+		dataArea.setText(contents);
+		dataArea.setBackground(Color.GREEN);
+	}
+	
+	private void loadCompare()
+	{
+		String contents = app.load("compare.txt");
+		dataArea.setText(contents);
+		dataArea.setBackground(Color.GREEN);
+	}
+	
+	private void loadTwoDArray()
+	{
+		String contents = app.load("twoDArray.txt");
 		dataArea.setText(contents);
 		dataArea.setBackground(Color.GREEN);
 	}
