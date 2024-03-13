@@ -28,7 +28,7 @@ public class Controller
 	
 	public void start()
 	{
-		setItUp();
+		//setItUp();
 		hashItOut();
 	}
 	
@@ -111,6 +111,31 @@ public class Controller
 	
 	private void hashItOut()
 	{
+		JOptionPane.showMessageDialog(window, "Working with a HashMap!");
 		
+		HashMap<String, Integer> mapDemo = new HashMap<String, Integer>();
+		String result = "text";
+		
+		mapDemo.put("", 1);
+		mapDemo.put(result, new Integer(123));
+		mapDemo.put("The key", Integer.valueOf(0));
+		int myFavoriteNumber = 4;
+		mapDemo.put("Nathan", myFavoriteNumber);
+		
+		for (Map.Entry<String, Integer> mapEntry : mapDemo.entrySet())
+		{
+			String key = mapEntry.getKey();
+			int value = mapEntry.getValue();
+			
+			JOptionPane.showMessageDialog(window, "Key: " + key + ", Value: " + value);
+		}
+		
+		Iterator<Map.Entry<String, Integer>> hashIterator = mapDemo.entrySet().iterator();
+		
+		while (hashIterator.hasNext())
+		{
+			Map.Entry<String, Integer> entry = hashIterator.next();
+			JOptionPane.showMessageDialog(window, "Key: " + entry.getKey());
+		}
 	}
 }
