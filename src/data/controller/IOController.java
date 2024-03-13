@@ -1,11 +1,15 @@
 package data.controller;
 import java.io.IOException;
+import java.util.Scanner;
+import java.io.File;
 
 import java.net.URL;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.lang.NullPointerException;
+import java.io.FileNotFoundException;
 import data.model.InternetCat;
 
 public class IOController
@@ -28,5 +32,24 @@ public class IOController
 		}
 		
 		return null;
+	}
+	
+	public static String readTextFromFile(Controller app, String path)
+	{
+		String text = "";
+		
+		try (Scanner fileScanner = new Scanner(new File(path)))
+		{
+			while (fileScanner.hasNextLine())
+			{
+				text += fileScanner.nextLine();
+			}
+		}
+		catch (NullPointerException | FileNotFoundException error)
+		{
+			app.handleError(error);
+		}
+		
+		return text;
 	}
 }
