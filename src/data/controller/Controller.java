@@ -95,6 +95,18 @@ public class Controller
 		{
 			JOptionPane.showMessageDialog(window, data);
 		}
+		
+		boolean canAdd = textSetExample.add("text");
+		JOptionPane.showMessageDialog(window, "Were able to add text? " + canAdd);
+		
+		Iterator<String> setIterator = textSetExample.iterator();
+		String result = "";
+		
+		while (setIterator.hasNext())
+		{
+			result = setIterator.next();
+			JOptionPane.showMessageDialog(window, result);
+		}
 	}
 	
 	private void hashItOut()
