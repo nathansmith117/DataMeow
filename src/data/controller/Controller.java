@@ -81,7 +81,20 @@ public class Controller
 	
 	private void setItUp()
 	{
+		HashSet<String> textSetExample = new HashSet<String>();
 		
+		textSetExample.add("Adding text");
+		textSetExample.add("Other text");
+		String sample = "text";
+		textSetExample.add(sample);
+		textSetExample.add(sample);
+		
+		JOptionPane.showMessageDialog(window, "There are " + textSetExample.size() + " items in the set!");
+		
+		for (String data : textSetExample)
+		{
+			JOptionPane.showMessageDialog(window, data);
+		}
 	}
 	
 	private void hashItOut()
