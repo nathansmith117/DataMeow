@@ -110,6 +110,7 @@ public class DataPanel extends JPanel
 	private void setupListeners()
 	{
 		catButton.addActionListener(click -> getCat());
+		linearButton.addActionListener(click -> loadLinear());
 	}
 	
 	private void setupLayout()
@@ -164,5 +165,12 @@ public class DataPanel extends JPanel
 		String results = app.addCat();
 		dataArea.setText(results);
 		loadCatImage(results);
+	}
+	
+	private void loadLinear()
+	{
+		String contents = app.load("linear.txt");
+		dataArea.setText(contents);
+		dataArea.setBackground(Color.GREEN);
 	}
 }

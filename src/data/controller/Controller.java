@@ -74,4 +74,11 @@ public class Controller
 		
 		return catImageURL;
 	}
+	
+	public String load(String path)
+	{
+		String results = IOController.readTextFromFile(this, path);
+		
+		return results;
+	}
 }
