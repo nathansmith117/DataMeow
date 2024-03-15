@@ -1,3 +1,4 @@
+1:
 Iterator<String> setIterator = textSetExample.iterator();
 String result = "";
 
@@ -6,3 +7,12 @@ while (setIterator.hasNext())
 	result = setIterator.next();
 	JOptionPane.showMessageDialog(window, result);
 }
+
+2:
+q1
+What are three important methods in a Set?
+add, clear, and contains
+
+q2
+What properties do they have?
+Everything the same type, not ordered, all unique values.

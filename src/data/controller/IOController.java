@@ -2,6 +2,7 @@ package data.controller;
 import java.io.IOException;
 import java.util.Scanner;
 import java.io.File;
+import java.io.PrintWriter;
 
 import java.net.URL;
 
@@ -52,5 +53,21 @@ public class IOController
 		}
 		
 		return text;
+	}
+	
+	public static void writeTextToFile(Controller app, String text, String path)
+	{
+		try (PrintWriter writer = new PrintWriter(new File(path));
+				Scanner stringScanner = new Scanner(text))
+		{
+			while (stringScanner.hasNextLine())
+			{
+				writer.println(stringScanner.nextLine());
+			}
+		}
+		catch (FileNotFoundException error)
+		{
+			app.handleError(error);
+		}
 	}
 }
