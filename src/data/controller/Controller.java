@@ -29,7 +29,7 @@ public class Controller
 	public void start()
 	{
 		//setItUp();
-		hashItOut();
+		//hashItOut();
 	}
 	
 	public void handleError(Exception error)

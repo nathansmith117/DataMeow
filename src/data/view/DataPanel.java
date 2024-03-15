@@ -42,6 +42,7 @@ public class DataPanel extends JPanel
 	private JButton treeButton;
 	private JButton twoDButton;
 	private JButton textButton;
+	private JButton saveButton;
 	
 	public DataPanel(Controller app)
 	{
@@ -68,6 +69,7 @@ public class DataPanel extends JPanel
 		treeButton = new JButton("trees");
 		twoDButton = new JButton("2D");
 		textButton = new JButton("text");
+		saveButton = new JButton("save");
 		
 		setupPanel();
 		setupListeners();
@@ -96,6 +98,7 @@ public class DataPanel extends JPanel
 		
 		webPanel.add(inputField);
 		webPanel.add(catButton);
+		webPanel.add(saveButton);
 		
 		dataPanel.add(linearButton);
 		dataPanel.add(compareButton);
