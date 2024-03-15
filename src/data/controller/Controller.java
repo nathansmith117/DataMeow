@@ -79,6 +79,11 @@ public class Controller
 		return results;
 	}
 	
+	public void save(String text, String path)
+	{
+		IOController.writeTextToFile(this, text, path);
+	}
+	
 	private void setItUp()
 	{
 		HashSet<String> textSetExample = new HashSet<String>();
