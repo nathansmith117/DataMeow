@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
+import javax.swing.JFileChooser;
 
 import javax.imageio.ImageIO;
 
@@ -120,6 +121,8 @@ public class DataPanel extends JPanel
 		treeButton.addActionListener(click -> loadTree());
 		compareButton.addActionListener(click -> loadCompare());
 		twoDButton.addActionListener(click -> loadTwoDArray());
+		saveButton.addActionListener(click -> saveContents());
+		textButton.addActionListener(click -> loadText());
 	}
 	
 	private void setupLayout()
@@ -174,6 +177,52 @@ public class DataPanel extends JPanel
 		String results = app.addCat();
 		dataArea.setText(results);
 		loadCatImage(results);
+	}
+	
+	private String getPath(String choice)
+	{
+		String path = ".";
+		
+		int result = -99;
+		
+		JFileChooser fileChooser = new JFileChooser();
+		
+		if (choice.equals("save"))
+		{
+			result = fileChooser.showSaveDialog(this);
+			
+			if (result == JFileChooser.APPROVE_OPTION)
+			{
+				path = fileChooser.getSelectedFile().getAbsolutePath();
+			}
+		}
+		else
+		{
+			result = fileChooser.showOpenDialog(this);
+			
+			if (result == JFileChooser.APPROVE_OPTION)
+			{
+				path = fileChooser.getSelectedFile().getAbsolutePath();
+			}
+		}
+		
+		return path;
+	}
+	
+	private void saveContents()
+	{
+		String contents = dataArea.getText();
+		String path = getPath("save");
+		
+		app.save(contents, path);
+	}
+	
+	private void loadText()
+	{
+		String path = getPath("");
+		String contents = app.load(path);
+		dataArea.setText(contents);
+		dataArea.setBackground(Color.DARK_GRAY);
 	}
 	
 	private void loadLinear()

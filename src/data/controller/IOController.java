@@ -44,7 +44,7 @@ public class IOController
 		{
 			while (fileScanner.hasNextLine())
 			{
-				text += fileScanner.nextLine();
+				text += fileScanner.nextLine() + "\n";
 			}
 		}
 		catch (NullPointerException | FileNotFoundException error)
