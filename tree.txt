@@ -1,1 +1,13 @@
-trees > humans
+1:
+A tree is the supreme being of the universe and plans and killing off the humans... oh wait not that kind of tree (:
+A tree is a hierarchical data structure often made up of nodes
+
+2:
+
+q1
+What Tree structures are in the Java Collections library?
+TreeSet and TreeMap.
+
+q2
+What is a leaf node?
+A node with no children.

@@ -1,1 +1,38 @@
-lmao
+1:
+Comparable<Type> adds the compareTo method often used for sorting and searching
+
+2:
+@Override
+/**
+ * Compares the two ducks. Returns 0 if the same, 1 if the calling duck is less, +1 if the calling duck is greater
+ * @param otherDuck The compared DebugDuck
+ * @return The compared result of the debug ducks
+ */
+public int compareTo(DebugDuck otherDuck)
+{
+	int comparedValue = 0;
+	
+	if (this.equals(otherDuck))
+	{
+		return comparedValue;
+	}
+	else if (this.questionCount < otherDuck.getQuestionCount())
+	{
+		comparedValue = -1;
+	}
+	else
+	{
+		comparedValue = 1;
+	}
+	
+	return comparedValue;
+}
+
+3:
+public class SortDucksByNameDescending implements Comparator<DebugDuck>
+{
+	public int compare(DebugDuck firstDuck, DebugDuck secondDuck)
+	{
+		return -1 * firstDuck.getName().compareTo(secondDuck.getName());
+	}
+}

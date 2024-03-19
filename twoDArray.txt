@@ -1,1 +1,14 @@
-we shall enter the 2d world
+1:
+A java 2d array is like a array turducken. You put a array inside of a array like this.
+int[][] grid = new int[height][width];
+
+2:
+You loop over the rows and columns like this.
+
+for (int y = 0; y < grid.length; y++)
+{
+	for (int x = 0; x < grid[0].length; x++)
+	{
+		// Do stuff...
+	}
+}

@@ -1,1 +1,12 @@
-teehee
+1:
+In setItUp and hashItOut we use a for-each and iterator object with while to loop over the data structures
+
+2:
+
+q1
+What is an Iterator?
+Something that can be iterated over often using a for-each.
+
+q2
+What is required for an Iterator?
+next and hasNext
