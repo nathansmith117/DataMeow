@@ -4,10 +4,14 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.PrintWriter;
 
+import java.util.ArrayList;
+
 import java.net.URL;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.lang.NullPointerException;
 import java.io.FileNotFoundException;
@@ -53,6 +57,47 @@ public class IOController
 		}
 		
 		return text;
+	}
+	
+	public static ArrayList<?> readJSONListFromFile(Controller app, String path, String type)
+	{
+		ObjectMapper mapper = new ObjectMapper();
+		
+		if (type.equals("InternetCat"))
+		{
+			ArrayList<InternetCat> cats = null;
+			
+			String source = readTextFromFile(app, path);
+			
+			try
+			{
+				cats = mapper.readValue(source, new TypeReference<ArrayList<InternetCat>>() {});
+			}
+			catch (JsonProcessingException error)
+			{
+				cats = new ArrayList<InternetCat>();
+				app.handleError(error);
+			}
+			
+			return cats;
+		}
+		
+		return null;
+	}
+	
+	public static void writeListToJSONFile(Controller app, ArrayList<?> list, String path)
+	{
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
+		
+		try
+		{
+			mapper.writeValue(new File(path), list);
+		}
+		catch (IOException error)
+		{
+			app.handleError(error);
+		}
 	}
 	
 	public static void writeTextToFile(Controller app, String text, String path)
