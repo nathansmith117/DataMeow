@@ -1,0 +1,224 @@
+{
+  "tests": [
+    {
+      "name": "Runner test",
+      "setup": "",
+      "run": "gradle test --tests RunnerTest.testMain",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "IOController methods",
+      "setup": "",
+      "run": "gradle test --tests IOControllerTest.testMethodStructure",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "IOController read List from URL",
+      "setup": "",
+      "run": "gradle test --tests IOControllerTest.testReadListURL",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "IOController write text",
+      "setup": "",
+      "run": "gradle test --tests IOControllerTest.testWriteText",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "IOController read text",
+      "setup": "",
+      "run": "gradle test --tests IOControllerTest.testReadText",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "IOController read cats",
+      "setup": "",
+      "run": "gradle test --tests IOControllerTest.testReadCats",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "IOController write cats",
+      "setup": "",
+      "run": "gradle test --tests IOControllerTest.testWriteCats",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "InternetCat Constructor",
+      "setup": "",
+      "run": "gradle test --tests InternetCatTest.testConstructor",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "InternetCat toString",
+      "setup": "",
+      "run": "gradle test --tests InternetCatTest.testToString",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "InternetCat Structure",
+      "setup": "",
+      "run": "gradle test --tests InternetCatTest.testStructure",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "Controller Data members",
+      "setup": "",
+      "run": "gradle test --tests ControllerTest.testDataMembers",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Controller Methods",
+      "setup": "",
+      "run": "gradle test --tests ControllerTest.testControllerMethods",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 55
+    },
+    {
+      "name": "Controller add Cat",
+      "setup": "",
+      "run": "gradle test --tests ControllerTest.testAddCat",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Controller cat image URL",
+      "setup": "",
+      "run": "gradle test --tests ControllerTest.testGetCatImageURL",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Controller handle error",
+      "setup": "",
+      "run": "gradle test --tests ControllerTest.testHandleError",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 0
+    },
+    {
+      "name": "Controller load",
+      "setup": "",
+      "run": "gradle test --tests ControllerTest.testLoad",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Controller save",
+      "setup": "",
+      "run": "gradle test --tests ControllerTest.testSave",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "DataFrame Test",
+      "setup": "",
+      "run": "gradle test --tests FrameTest.testDataFrame",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "DataPanel structure",
+      "setup": "",
+      "run": "gradle test --tests PanelTest.testPanelStructure",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "DataPanel methods",
+      "setup": "",
+      "run": "gradle test --tests PanelTest.testFrameworkMethodsExist",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "DataPanel internet",
+      "setup": "",
+      "run": "gradle test --tests PanelTest.testInternetMethodsExist",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 15
+    },
+    {
+      "name": "DataPanel data structure methods",
+      "setup": "",
+      "run": "gradle test --tests PanelTest.testDataStructureMethodsExist",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 15
+    }
+  ]
+}
